@@ -50,6 +50,7 @@ async function uploadFile(data){
         
     } catch (error) {
         console.error(error);
+        throw new Error(error);
     }
 
   

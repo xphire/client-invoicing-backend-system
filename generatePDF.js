@@ -135,6 +135,7 @@ data.amountDue = (data.totalAmount - data.taxAmount).toFixed(2);
       
     } catch (error) {
       console.log(error);
+      throw new Error(error);
     }
   
   

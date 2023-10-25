@@ -74,6 +74,7 @@ const sendMail = async (recipientEmail,subject,invoiceUrl, invoiceNumber) => {
       )
         
       } catch (error) {
+        console.log(error);
          throw new Error(error);
       }
 
