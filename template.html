@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Invoice</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        /* Add your CSS styles here */
+
+       body{
+        font-family: 'Lato', sans-serif !important;
+       }
+        .material-symbols-outlined {
+             font-variation-settings:
+                 'FILL' 0,
+                 'wght' 400,
+                 'GRAD' 0,
+                'opsz' 48;
+            text-align: center;
+        }
+
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+        }
+
+        .logo_container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .header {
+            display:flex;
+            flex-direction: row;
+        }
+
+        .middle_child_header{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 80%;
+            height: 100px;
+            background-color: black;
+            color: white;
+        }
+
+        .middle_child_header small{
+            font-size: x-small;
+            margin-top: -10px;
+            text-align: center;
+            text-decoration: dotted;
+        }
+
+        .middle_child_header h3{
+           text-align: center;
+           letter-spacing: 3px;
+        }
+
+        .side_child_header{
+            
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 10%;
+            height: 100px;
+        }
+
+        hr {
+            border: none; 
+            border-top: 3px solid black;
+            width: 100%
+        }
+
+        .contact{
+              display: flex;
+              flex-direction: row;
+        }
+
+        .sub_contact_sides{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 10%;
+            height: 100px;
+        }
+
+        .sub_contact_middle{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            width: 80%;
+            height: 100px;
+            color: white;
+        }
+
+        .materials{
+            display: flex;
+            flex-direction: column;
+            color: black;
+            justify-content: center;
+            font-size: small;
+            
+        }
+
+        .materials p{
+            text-align: center !important;
+        }
+
+        .total_due{
+            display: flex;
+            flex-direction: row;
+        }
+
+        .total_due_child1{
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            letter-spacing: 3px;
+            line-height: 25px;
+            background-color: black;
+            color: white;
+            width: 45%;
+            white-space: nowrap;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        .total_due_child2{
+            display: flex;
+            flex-direction: column;
+            height: 50px;
+            width: 100%;
+            justify-content: center;
+            margin-top: -30px;
+            
+
+        }
+
+        .total_due_child2 P{
+           letter-spacing: 3px;
+           font-size: 2rem; 
+           margin-block-end: 0;
+
+       }
+
+
+       .invoice_title{
+        display: flex;
+        justify-content: end;
+        border-bottom: 3px solid black;
+        padding-right: 50px;
+       }
+
+       .bold{
+        font-weight: bold;
+       }
+
+       .invoice_number{
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+       }
+
+       .table_section{
+        margin-top: 50px;
+        display: flex;
+        justify-content: center;
+       }
+
+       .main_table{
+        width: 90%;
+        border-top: none;
+        border-collapse: collapse;
+        border-left: none;
+        border-right: none;
+       }
+
+       .main_table td{
+        border: 1px solid grey;
+        height: 30px;
+       }
+
+
+       .main_table thead td{
+        border: none;
+        text-align: center;
+        font-weight: 100;
+       }
+
+
+       .main_table tbody td{
+        text-align: center;
+       }
+
+      
+       .main_table thead tr td:first-child{
+        border-left: none;
+       }
+
+
+    .amount_due{
+        margin-top: 30px;
+        width: 90%;
+        display: flex;
+        justify-content: end;
+    }
+
+    .amount_due table td{
+        padding-top: 10px;
+    
+    }
+
+    .amount_due table tr td:nth-child(2){
+        padding-left: 10px;
+        font-weight: 200;
+        
+    }
+
+    .payment_terms{
+        padding: 20px 0 0 30px;
+        font-size: smaller;
+        color: grey;
+    }
+
+    .underline{
+        text-decoration: underline;
+    }
+
+
+        
+    </style>
+</head>
+<body>
+    <!----------------------COMPANY LOGO SECTION-------------------------------------------->
+    <div class="logo_container">
+        <img src="data:image/png;base64,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">
+    </div>
+
+    <!----------------------HEADER NAME SECTION-------------------------------------------->
+    <div class="header">
+        <div class="side_child_header">
+            <hr>
+        </div>
+        <div class="middle_child_header">
+            <h3>KARAGANDY TECHNOLOGIES</h3>
+            <small>INFORMATION TECHNOLOGY CONSULTANTS</small>
+        </div>
+        <div class="side_child_header">
+            <hr>
+        </div>
+    </div>
+
+    <!----------------------CONTACT SECTION-------------------------------------------->
+    <div class="contact">
+        <div class="sub_contact_sides"></div>
+        <div class="sub_contact_middle">
+            <div class="materials">
+                <span class="material-symbols-outlined">
+                    mail
+                </span>
+                <p>info@karagandytechnologies.com</p>
+            </div>
+            <div class="materials">
+                <span class="material-symbols-outlined">
+                    call
+                    </span>
+                <p>+234-814-640-7381</p>
+            </div>
+            <div class="materials">
+                <span class="material-symbols-outlined">
+                    language
+                    </span>
+                <p>www.karagandytechnologies.com</p>
+            </div>
+        </div>
+        <div class="sub_contact_sides"></div>
+    </div>
+
+    <!----------------------TOTAL DUE SECTION AND INVOICE TITLE-------------------------------------------->
+    <div class="total_due">
+        <div class="total_due_child1">
+            TOTAL DUE {{dollarize amountDue}}
+        </div>
+        <div class="total_due_child2" >
+            <div class="invoice_title">
+                <p>INVOICE</p>
+            </div>
+        </div>
+    </div>
+
+    <!----------------------INVOICE NUMBER AND RECIPIENT-------------------------------------------->
+    <div class="invoice_number">
+        <div class="inv">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class="bold">INV ID:</td>
+                        <td>{{invoiceNumber}}</td>
+                    </tr>
+                    <tr>
+                        <td class="bold">DATE:</td>
+                        <td>{{issueDate}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class="bold">Invoice To</td>
+                    </tr>
+                    <tr>
+                        <td>{{clientName}}</td>
+                    </tr>
+                    <tr>
+                        <td>{{clientAddress}}</td>
+                    </tr>
+                    <tr>
+                        <td>{{clientPhoneNumber}}</td>
+                    </tr>
+                    <tr>
+                        <td>{{clientEmail}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!----------------------TABLE SECTION, description, hours, rate per hour, total-------------------------------------------->
+    <div class="table_section">
+
+        <table class="main_table">
+            <thead>
+                <tr>
+                    <td>DESCRIPTION</td>
+                    <td>HOURS</td>
+                    <td>RATE PER HOUR</td>
+                    <td>AMOUNT</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{descriptions.0.description}}</td>
+                    <td>{{descriptions.0.hours}}</td>
+                    <td>{{dollarize descriptions.0.ratePerHour}}</td>
+                    <td>
+                         {{dollarize (multiply descriptions.0.hours descriptions.0.ratePerHour)}} 
+                    </td>
+                </tr>
+                <tr>
+                    <td>{{descriptions.1.description}}</td>
+                    <td>{{descriptions.1.hours}}</td>
+                    <td>{{dollarize descriptions.1.ratePerHour}}</td>
+                    <td>{{empty (dollarize (multiply descriptions.1.hours descriptions.1.ratePerHour))}}</td>
+                </tr>
+                <tr>
+                    <td>{{descriptions.2.description}}</td>
+                    <td>{{descriptions.2.hours}}</td>
+                    <td>{{dollarize descriptions.2.ratePerHour}}</td>
+                    <td>{{empty (dollarize (multiply descriptions.2.hours descriptions.2.ratePerHour))}}</td>
+                </tr>
+                <tr>
+                    <td>{{descriptions.3.description}}</td>
+                    <td>{{descriptions.3.hours}}</td>
+                    <td>{{dollarize descriptions.3.ratePerHour}}</td>
+                    <td>{{empty (dollarize (multiply descriptions.3.hours descriptions.3.ratePerHour))}}</td>
+                </tr>
+                <tr>
+                    <td>{{descriptions.4.description}}</td>
+                    <td>{{descriptions.4.hours}}</td>
+                    <td>{{dollarize descriptions.4.ratePerHour}}</td>
+                    <td>{{empty (dollarize (multiply descriptions.4.hours descriptions.4.ratePerHour))}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!----------------------TOTAL, TAX , AMOUNT DUE-------------------------------------------->
+    <div class="amount_due">
+       <table>
+        <tbody>
+            <tr>
+                <td class="bold">TOTAL</td>
+                <td>{{dollarize totalAmount}}</td>
+            </tr>
+            <tr>
+                <td class="bold">TAX</td>
+                <td>{{dollarize taxAmount}}</td>
+            </tr>
+            <tr>
+                <td class="bold">AMOUNT DUE</td>
+                <td>{{dollarize amountDue}}</td>
+            </tr>
+        </tbody>
+       </table>
+    </div>
+
+    <!----------------------PAYMENT TERMS-------------------------------------------->
+
+
+    <div class="payment_terms bold">
+        <p class="underline">PAYMENT INFORMATION</p>
+        <p>PAYONEER</p>
+        <p>KARAGANDY TECHNOLOGIES</p>
+        <p>payments@karagandytechnologies.com</p>
+    </div>
+</body>
+</html>
